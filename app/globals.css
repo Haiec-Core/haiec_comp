@@ -8,6 +8,10 @@
   --haiec-primary-dark: #1d4ed8;
   --haiec-secondary: #64748b;
   --haiec-accent: #7c3aed;
+  --haiec-secure-green: #22c55e;
+  --haiec-secure-blue: #0ea5e9;
+  --haiec-secure-gray: #1e293b;
+  --haiec-secure-bg: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 50%, #dbeafe 100%);
 }
 
 body {
@@ -78,4 +82,77 @@ body {
 
 .bg-haiec-primary:hover {
   background-color: var(--haiec-primary-dark);
+}
+
+/* Security background for main sections */
+.bg-security {
+  background: var(--haiec-secure-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Security card styles */
+.card-security {
+  @apply bg-white p-6 rounded-xl shadow-lg border-2 border-blue-100 hover:shadow-xl transition-shadow duration-200 relative overflow-hidden;
+}
+
+.card-security::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, var(--haiec-secure-blue) 0%, transparent 70%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Security icon badge */
+.security-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 mb-2;
+  border: 1px solid var(--haiec-secure-green);
+}
+
+/* Button enhancements for security theme */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-200 border-2 border-blue-600;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-100 text-blue-600 px-6 py-3 rounded-lg font-semibold border-2 border-blue-600 transition-all duration-200;
+  letter-spacing: 0.02em;
+}
+
+.btn-secondary:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Security shadow for hero/cta */
+.security-shadow {
+  box-shadow: 0 8px 32px 0 rgba(30, 41, 59, 0.18), 0 1.5px 6px 0 rgba(34, 197, 94, 0.09);
+}
+
+/* Security-themed text */
+.text-secure {
+  color: var(--haiec-secure-blue);
+}
+
+.text-secure-green {
+  color: var(--haiec-secure-green);
+}
+
+.text-secure-gray {
+  color: var(--haiec-secure-gray);
+}
+
+/* Security icon style */
+.security-icon {
+  @apply text-blue-500 text-3xl mr-2 align-middle;
+  filter: drop-shadow(0 2px 6px #0ea5e955);
 }
